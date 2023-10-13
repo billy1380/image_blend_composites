@@ -1,0 +1,22 @@
+name: image_blend_composites
+description: A flutter package and example application that use blend_composities
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=3.1.3 <4.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  blend_composites:
+    path: ../blend_composites/
+  image: ^4.1.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
