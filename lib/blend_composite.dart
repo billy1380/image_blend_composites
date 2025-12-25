@@ -57,7 +57,13 @@ final class BlendComposite extends BlendCompositeBase {
     img.Image src = srcDecoder.decode(srcBytes)!;
     img.Image dst = dstDecoder.decode(dstBytes)!;
 
-    int width = min(src.width, dst.height);
+    img.Image dstOut = composeImages(src, dst);
+
+    return encoder.encode(dstOut);
+  }
+
+  img.Image composeImages(img.Image src, img.Image dst) {
+    int width = min(src.width, dst.width);
     int height = min(src.height, dst.height);
 
     double alpha = this.alpha;
@@ -108,7 +114,6 @@ final class BlendComposite extends BlendCompositeBase {
         );
       }
     }
-
-    return encoder.encode(dstOut);
+    return dstOut;
   }
 }
